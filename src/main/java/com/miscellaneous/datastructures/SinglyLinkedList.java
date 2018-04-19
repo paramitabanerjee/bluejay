@@ -5,7 +5,7 @@ package com.miscellaneous.datastructures;
  */
 public class SinglyLinkedList<E> {
 
-    private Node<E> head;
+    public Node<E> head;
 
     public void insertData(E data) {
 
@@ -72,13 +72,37 @@ public class SinglyLinkedList<E> {
 
     public void displayData() {
         Node currentNode = head;
-        Node previousNode = null;
-
         while (currentNode!= null) {
             currentNode.displayData();
             currentNode = currentNode.nextNode;
         }
     }
+
+    public void reverseLinkedList() {
+
+        reverse(head);
+    }
+
+    public void reverse(Node n) {
+
+        Node current = n;
+        Node next = current.nextNode;
+        //below is the condition that ends the recursion
+        if(next.nextNode==null) {
+            head = next; //because this is the last element
+            next.nextNode = current; //here we are swapping the order.
+            return;
+        }
+        //recrusively reverse the rest of it
+        reverse(next);
+        //the interchange the nodes
+        next.nextNode = current;
+        current.nextNode = null;
+
+
+    }
+
+
 
 }
 

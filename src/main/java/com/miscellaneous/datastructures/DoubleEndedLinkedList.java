@@ -3,7 +3,7 @@ package com.miscellaneous.datastructures;
 /**
  * Created by m840378 on 4/17/18.
  */
-public class DoublyLinkedList<E> {
+public class DoubleEndedLinkedList<E> {
 
     private Node<E> head;
     private Node<E> tail;
